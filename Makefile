@@ -1,13 +1,8 @@
 
-PROJECT ?= ""
-
 all: push
 
 build:
-	docker build \
-		-t bentsherman/nextflow-gcloud \
-		--build-arg PROJECT=${PROJECT} \
-		.
+	docker build -t bentsherman/nextflow-gcloud .
 
 push: build
 	docker push bentsherman/nextflow-gcloud
